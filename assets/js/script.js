@@ -20,7 +20,7 @@ function handleSearchFormSubmit(event) {
 searchFormEl.addEventListener('submit', handleSearchFormSubmit);
 
 function searchApi(searchInputVal) {
-    var cityQueryUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + searchInputVal + '&appid=8476cfc3106ce9f4f4cdee942c041abe';
+    var cityQueryUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + searchInputVal + '&appid=8476cfc3106ce9f4f4cdee942c041abe';
     fetch(cityQueryUrl)
         .then(function (response) {
             if (!response.ok) {
@@ -66,7 +66,7 @@ function printResults(resultObj) {
 
     var weatherContent = document.createElement('p');
     weatherContent.innerHTML =
-    '<img src="http://openweathermap.org/img/wn/'+ resultObj.weather[0].icon +'@2x.png"><br/><strong>Temp:</strong> ' + resultObj.main.temp + '<br/><strong>Wind:</strong> ' + resultObj.wind.speed + '<br/><strong>Humidity:</strong> ' + resultObj.main.humidity;
+    '<img src="https://openweathermap.org/img/wn/'+ resultObj.weather[0].icon +'@2x.png"><br/><strong>Temp:</strong> ' + resultObj.main.temp + '<br/><strong>Wind:</strong> ' + resultObj.wind.speed + '<br/><strong>Humidity:</strong> ' + resultObj.main.humidity;
 
     currentWeatherBody.append(cityName, weatherContent);
 
@@ -103,7 +103,7 @@ function printFiveDay(resultObj) {
 
     var weatherContent = document.createElement('p');
     weatherContent.innerHTML =
-    '<img src="http://openweathermap.org/img/wn/'+ resultObj.list[i].weather[0].icon +'@2x.png"><br/><strong>Temp:</strong> ' + resultObj.list[i].main.temp + '<br/><strong>Wind:</strong> ' + resultObj.list[i].wind.speed + '<br/><strong>Humidity:</strong> ' + resultObj.list[i].main.humidity;
+    '<img src="https://openweathermap.org/img/wn/'+ resultObj.list[i].weather[0].icon +'@2x.png"><br/><strong>Temp:</strong> ' + resultObj.list[i].main.temp + '<br/><strong>Wind:</strong> ' + resultObj.list[i].wind.speed + '<br/><strong>Humidity:</strong> ' + resultObj.list[i].main.humidity;
 
     currentWeatherBody.append(date, weatherContent);
     currentWeather.append(currentWeatherBody);
